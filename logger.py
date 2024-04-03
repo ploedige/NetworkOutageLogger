@@ -54,7 +54,7 @@ class NetworkOutageLogger:
         self.logfile.set(filedialog.asksaveasfilename(defaultextension=".txt", filetypes=[("Text files", "*.txt"), ("All files", "*.*")]))
 
     def ping_host(self):
-        return subprocess.call(["ping", "-c", "1", self.target.get()], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL) == 0
+        return subprocess.call(["ping", "-n", "1", self.target.get()], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL) == 0
 
     def log_outage(self, start_time, end_time):
         with open(self.logfile.get(), "a") as f:
