@@ -28,6 +28,7 @@ class NetworkOutageLogger:
 
         self.log_file_entry = tk.Entry(self.master, textvariable=self.logfile)
         self.log_file_entry.grid(row=1, column=1)
+        self.log_file_entry.config(state="readonly")
 
         self.browse_button = tk.Button(self.master, text="Browse", command=self.browse_file)
         self.browse_button.grid(row=1, column=2)
